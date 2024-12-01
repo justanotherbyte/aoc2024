@@ -19,7 +19,6 @@ int part1() {
     string delim = "   ";
     while (getline(f, line)) {
         string num1_str = line.substr(0, line.find(delim));
-        // cout << num1 << endl;
         string num2_str = line.substr(line.find(delim)+2,line.length());
         int num1, num2;
         num1 = stoi(num1_str);
