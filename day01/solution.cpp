@@ -10,9 +10,9 @@ using namespace std;
 
 int part1() {
     ifstream f("day01/input.txt");
-    
+
     int total = 0;
-    
+
     string line;
     vector<int> nums1;
     vector<int> nums2;
@@ -26,24 +26,24 @@ int part1() {
         nums1.push_back(num1);
         nums2.push_back(num2);
     }
-    
+
     sort(nums1.begin(), nums1.end());
     sort(nums2.begin(), nums2.end());
-    
+
     for (int i = 0; i < nums1.size(); i++) {
         total += abs(nums1[i]-nums2[i]);
     }
-    
+
     return total;
 }
 
 int part2() {
     ifstream f("day01/input.txt");
-    
+
     int total = 0;
-    
+
     string line;
-    set<int> nums1;
+    vector<int> nums1;
     vector<int> nums2;
     string delim = "   ";
     while (getline(f, line)) {
@@ -53,10 +53,10 @@ int part2() {
         int num1, num2;
         num1 = stoi(num1_str);
         num2 = stoi(num2_str);
-        nums1.insert(num1);
+        nums1.push_back(num1);
         nums2.push_back(num2);
     }
-    
+
     for (int n : nums1) {
         total += (n * count(nums2.begin(), nums2.end(), n));
     }
