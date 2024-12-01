@@ -12,10 +12,9 @@ def part1():
         
     list1.sort()
     list2.sort()
-    
-    for i, n in enumerate(list1):
-        n2 = list2[i]
-        total += abs(n-n2)
+        
+    for n1, n2 in zip(list1, list2):
+        total += abs(n1-n2)
         
     return total
     
