@@ -24,8 +24,8 @@ CPP_TEMPLATE = """#include <iostream>
 using namespace std;
 
 int part1() {
-    ifstream f("day01/input.txt");
-    
+    ifstream f("<DIRNAME>/input.txt");
+
     string line;
     while (getline(f, line)) {
         // do something...
@@ -33,8 +33,8 @@ int part1() {
 }
 
 int part2() {
-    ifstream f("day01/input.txt");
-    
+    ifstream f("<DIRNAME>/input.txt");
+
     string line;
     while (getline(f, line)) {
         // do something...
@@ -68,12 +68,15 @@ def setup(day: str) -> None:
 
     with open("solution.py", "w") as f:
         f.write(PY_TEMPLATE.format(dirname))
-        
+
     with open("solution.cpp", "w") as f:
-        f.write(CPP_TEMPLATE.replace("<DAY_DIR>", dirname))
+        f.write(CPP_TEMPLATE.replace("<DIRNAME>", dirname))
 
     with open("input.txt", "wb") as f:
         f.write(puzzle_input)  # type: ignore
+
+    with open("example.txt", "w") as _:
+        pass
 
 
 day = sys.argv[-1]
