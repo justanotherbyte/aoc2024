@@ -97,9 +97,7 @@ def part2():
                         l1, l2 = chars1[1], chars2[1]
                         cset = {"S", "M"}
 
-                        if (l1 != l2) and (l1 in cset) and (l2 in cset):
-                            continue
-                        else:
+                        if not ((l1 != l2) and (l1 in cset) and (l2 in cset)):
                             count = False
                     else:
                         count = False
